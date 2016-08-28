@@ -1,0 +1,33 @@
+<div class="display">
+    <div class="item col-xs-12">
+        <div class="col-xs-12">
+            <h3 class="banner">《{{book.Name}}》</h3>
+            <p class="text-right">作者：{{book.Author}}</p>
+        </div>
+        <div class="col-xs-12" style="margin-bottom: 10px">
+            <div class="col-sm-4 col-xs-6">
+                类别：{{book.Type}}
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                出版日期：{{book.PublishDate}}
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                出版社：{{book.PublishHouse}}
+            </div>
+            <br><br>
+            <div class="col-sm-4 col-xs-6">
+               ISBN：{{book.ISBN}}
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                版次：{{book.Edtion}}
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                价格：{{book.Price}}元
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <button class="btn btn-info col-xs-12" ng-click="borrow()" ng-show="ifborrow()">借阅</button>
+            <button class="btn btn-info col-xs-12" ng-click="OrderBook()" ng-hide="ifborrow()">预约</button>
+        </div>
+    </div>
+</div>

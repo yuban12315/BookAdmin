@@ -1,0 +1,22 @@
+<div class="display">
+    <div class="col-md-6 col-xs-12">
+        <div class="profile">
+            <p class="title">用户信息</p>
+            <div class="body">
+                用户：<p class="text-center">{{data.UserName}}</p>
+                真实姓名：<p class="text-center">{{data.TrueName}}</p>
+                剩余可借书量：<p class="text-center">{{data.BookNum}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div class="profile">
+            <p class="title">我借的书,点击还书</p>
+            <div class="body">
+                <div ng-repeat="i in data.BookList">
+                    <p class="text-center book" ng-click="back($index)">{{i.Name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

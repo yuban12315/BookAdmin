@@ -1,0 +1,23 @@
+<div>
+    <h1 class="text-big text-center banner">
+        <img src="../images/book.png" alt="book">
+        图书管理系统
+    </h1>
+    <div class="container1 text-center">
+        <img class="img img-circle" src="../images/defualt-a.png" alt="avatar">
+        <div class="alert alert-warning margin-10px col-xs-12" ng-show="msg.ifshow">
+            <p class="text-center" ng-bind="msg.text"></p>
+        </div>
+        <form  ng-submit="Login()">
+            <fieldset>
+                <input class="form-control margin-10px" type="text" placeholder="用户名" ng-model="form.UserName">
+                <input class="form-control margin-10px" type="password" placeholder="密码" ng-model="form.PassWord">
+                <button type="submit" class="btn btn-info margin-10px col-lg-12 col-xs-12">登录</button>
+            </fieldset>
+        </form>
+        <div class="col-lg-12">
+            <a class="col-lg-6 text-left" href="#/regist">新用户注册</a>
+            <a class="col-lg-6 text-right" href="#/regist">忘记密码？</a>
+        </div>
+    </div>
+</div>

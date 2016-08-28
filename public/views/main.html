@@ -1,0 +1,11 @@
+<div class="display">
+    <div ng-repeat="item in books track by item.Id">
+        <div class="item col-xs-12" ng-click="more($index)">
+            <div class="col-xs-12">
+                <h3 class="banner">《{{::item.Name}}》</h3>
+                <p class="text-right">作者：{{::item.Author}}</p>
+            </div>
+            <p>可借阅量：{{item.Quantity-1}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="images/title.ico" rel="icon">
+    <title ng-bind="web"></title>
+</head>
+<body>
+<div ng-controller="NavCtrl">
+    <nav class="navbar navbar-default" role="navigation" id="header">
+        <div class="display">
+            <div class="navbar-header">
+                <button class="navbar-toggle pull-left" data-toggle="collapse" data-target="#sg-header" id="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">图书管理系统</a>
+            </div>
+            <div class="collapse navbar-collapse col-md-offset-4" id="sg-header">
+                <ul class="nav navbar-nav">
+                    <li class="li"><a class="nav-a" href="#/" ng-click="change()">首页</a></li>
+                    <li class="li" ng-show="iflogin()"><a class="nav-a" href="#/user">个人中心</a></li>
+                    <li class="li" ng-show="ifAdmin()"><a class="nav-a" href="#/admin">管理中心</a></li>
+                    <li class="li"><a class="nav-a" href="#/login" ng-click="change()" ng-show="!iflogin()">登录</a></li>
+                    <li class="li" ng-show="iflogin()"><a class="nav-a" ng-click="logout()">登出</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="row">
+    <div ng-view></div>
+</div>
+
+<script src="javascripts/vendor/jQuery.js"></script>
+<script src="javascripts/vendor/pin.js"></script>
+<script src="javascripts/vendor/bootstrap.js"></script>
+<script src="javascripts/vendor/angular.min.js"></script>
+<script src='javascripts/vendor/angular-route.min.js'></script>
+<script src="javascripts/angular/controllers.js"></script>
+<script src="javascripts/angular/service.js"></script>
+<script src="javascripts/vendor/canvas-nest.min.js"></script>
+<script src="javascripts/vendor/cookie.js"></script>
+</body>
+
+</html>

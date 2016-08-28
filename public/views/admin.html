@@ -1,0 +1,147 @@
+<div class="display">
+    <div class="col-md-6 col-xs-12">
+        <div class="profile">
+            <p class="title">书籍列表</p>
+            <div class="body">
+                <div ng-repeat="book in books">
+                    <p class="text-center book" ng-click="EditBook($index)">
+                        《{{book.Name}}》
+                    </p>
+                </div>
+                <button class="btn btn-info col-xs-12" ng-click="AddBook()">增加书籍</button>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div class="profile">
+            <p class="title">用户列表</p>
+            <div class="body">
+                <div ng-repeat="user in users">
+                    <div>
+                        <p class="text-center book" ng-click="EditUser($index)">用户名：{{user.UserName}}</p>
+                    </div>
+                </div>
+                <button class="btn btn-info col-xs-12" ng-click="AddUser()">增加用户</button>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div class="profile">
+            <p class="title">借书列表</p>
+            <div class="body">
+                <div ng-repeat="item in list">
+                    <div>
+                        <p class="text-center">书籍：《{{item.Name}}》&nbsp;&nbsp;&nbsp;借阅者：{{item.UserName}}</p>
+                    </div>
+                </div>
+                <button class="btn btn-info pull-left" ng-click="byBook()">按书籍排列</button>
+                <button class="btn btn-info pull-right" ng-click="byUser()">按用户排列</button>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="col-xs-12 banner text-center">《{{bookcopy.Name}}》</h3>
+                </div>
+                <div class="modal-body information">
+                    <form>
+                        <fieldset>
+                            书名：<input class="form-control" type="text" ng-model="bookcopy.Name">
+                            类别：<input class="form-control" type="text" ng-model="bookcopy.Type">
+                            作者：<input class="form-control" type="text" ng-model="bookcopy.Author">
+                            出版社：<input class="form-control" type="text" ng-model="bookcopy.PublishHouse">
+                            出版日期：<input class="form-control" type="text" ng-model="bookcopy.PublishDate">
+                            ISBN号：<input class="form-control" type="text" ng-model="bookcopy.ISBN">
+                            版次：<input class="form-control" type="text" ng-model="bookcopy.Edtion">
+                            价格：<input class="form-control" type="text" ng-model="bookcopy.Price">
+                            数量：<input class="form-control" type="text" ng-model="bookcopy.Quantity">
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="deleteBook()" data-dismiss="modal">删除此书</button>
+                    <button class="btn btn-info pull-left" ng-click="accept()">保存修改</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="col-xs-12 banner text-center">《{{bookcopy.Name}}》</h3>
+                </div>
+                <div class="modal-body information">
+                    <form>
+                        <fieldset>
+                            书名：<input class="form-control" type="text" ng-model="bookcopy.Name">
+                            类别：<input class="form-control" type="text" ng-model="bookcopy.Type">
+                            作者：<input class="form-control" type="text" ng-model="bookcopy.Author">
+                            出版社：<input class="form-control" type="text" ng-model="bookcopy.PublishHouse">
+                            出版日期：<input class="form-control" type="text" ng-model="bookcopy.PublishDate">
+                            ISBN号：<input class="form-control" type="text" ng-model="bookcopy.ISBN">
+                            版次：<input class="form-control" type="text" ng-model="bookcopy.Edtion">
+                            价格：<input class="form-control" type="text" ng-model="bookcopy.Price">
+                            数量：<input class="form-control" type="text" ng-model="bookcopy.Quantity">
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info pull-left" ng-click="accept2()">增加书籍</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="col-xs-12 banner text-center">用户信息</h3>
+                </div>
+                <div class="modal-body information">
+                    <form>
+                        <fieldset>
+                            用户名：<input class="form-control" type="text" ng-model="usercopy.UserName">
+                            密码：<input class="form-control" type="text" ng-model="usercopy.PassWord">
+                            姓名：<input class="form-control" type="text" ng-model="usercopy.TrueName">
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="deleteUser()" data-dismiss="modal">删除用户</button>
+                    <button class="btn btn-info pull-left" ng-click="accept3()">修改资料</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="col-xs-12 banner text-center">用户信息</h3>
+                </div>
+                <div class="modal-body information">
+                    <form>
+                        <fieldset>
+                            用户名：<input class="form-control" type="text" ng-model="usercopy.UserName">
+                            密码：<input class="form-control" type="text" ng-model="usercopy.PassWord">
+                            姓名：<input class="form-control" type="text" ng-model="usercopy.TrueName">
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info pull-left" ng-click="accept4()" data-dismiss="modal">添加用户</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
